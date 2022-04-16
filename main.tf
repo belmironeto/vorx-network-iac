@@ -77,3 +77,15 @@ resource "aws_route" "vorx_routeToInternet" {
   destination_cidr_block = "0.0.0.0/0"
   gateway_id = aws_internet_gateway.vorx_igw.id
 }
+
+#Associando Subnet pública com a Tabela de Roteamento
+resource "aws_route_table_association" "vorx_rt_association_pub1" {
+    subnet_id = aws_subnet.vorx_subnet_public1.id
+    route_table_id = aws_route_table.vorx_routeTable_pub.id
+}
+
+resource "aws_route_table_association" "vorx_rt_association_pub2" {
+    subnet_id = aws_subnet.vorx_subnet_public2.id
+    route_table_id = aws_route_table.vorx_routeTable_pub.id
+}
+
