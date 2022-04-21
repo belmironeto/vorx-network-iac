@@ -15,8 +15,9 @@ module "vpc" {
   tags = {
     Terraform = "true"
     Environment = "Production"
-    CC = "100100042"
+    CC = "100100041"
     Team = "DevOps"
+    Onwer = "SRE"
   }
 }
 
